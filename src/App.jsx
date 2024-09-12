@@ -4,12 +4,8 @@ import { AuthProvider } from "./context/AuthContext";
 
 export default function App() {
   return (
-    <div className='app'>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
-        <AuthProvider>
-          <Routes />
-        </AuthProvider>
-      </MantineProvider>
-    </div>
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   );
 }
