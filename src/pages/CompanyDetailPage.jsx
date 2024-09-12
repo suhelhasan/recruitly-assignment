@@ -4,8 +4,12 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 import { Flex, Group, Button, Text, Modal } from "@mantine/core";
 import CreateCompanyForm from "../components/CreateCompanyForm";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const CompanyDetailPage = () => {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
   const { id } = useParams();
   const [company, setCompany] = useState(null);
   const [opened, setOpened] = useState(false);

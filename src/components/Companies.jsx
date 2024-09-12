@@ -11,7 +11,6 @@ const CompanyList = () => {
     getCompanies().then((response) => {
       if (response.status == 200) {
         setCompanies(response.data.data);
-        console.log(response.data);
       }
     });
   }, []);

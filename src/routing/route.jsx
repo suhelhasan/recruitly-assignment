@@ -10,8 +10,6 @@ export default function route() {
       <Route path='/' element={<Login />} />
       <Route path='/companylist' element={<CompanyListPage />} />
       <Route path='/company/:id' element={<CompanyDetailPage />} />
-      {/* <Route path='/company/new' element={<AddEditCompanyPage />} /> */}
-      {/* <Route path='/company/edit/:id' element={<AddEditCompanyPage />} /> */}
       <Route path='*' element={<Navigate to='/' />} />
     </Routes>
   );
