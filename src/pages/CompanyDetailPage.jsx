@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCompany, updateCompany } from "../api/companyService";
+import { getCompany, updateCompany } from "../api/CompanyService";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
 // import { useParams } from 'react-router-dom';
