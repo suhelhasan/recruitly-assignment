@@ -1,4 +1,3 @@
-import { MantineProvider } from "@mantine/core"; // Import MantineProvider
 import Routes from "./routing/route";
 import { AuthProvider } from "./context/AuthContext";
 
