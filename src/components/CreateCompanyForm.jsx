@@ -41,7 +41,7 @@ export default function CreateCompanyForm({
         setOpened(false);
       });
     } else {
-      setError("Please enter the name");
+      setError("Please enter the name.");
     }
   };
   return (
