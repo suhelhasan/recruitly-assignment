@@ -28,6 +28,7 @@ export default function CreateCompanyForm({
       addCompany({ name, website, email, phone }).then((response) => {
         updateData(response.data);
         setOpened(false);
+        alert("New Company added");
       });
     } else {
       setError("Please enter the name");
