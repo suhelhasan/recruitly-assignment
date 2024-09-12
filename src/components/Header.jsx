@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { updateCompany } from "../api/CompanyService";
+// import { updateCompany } from "../api/CompanyService";
 
 // const Header = () => {
 //   const { logout } = useAuth();
@@ -21,7 +21,7 @@ import { updateCompany } from "../api/CompanyService";
 
 // export default Header;
 
-import { AppShell, Burger } from "@mantine/core";
+import { AppShell } from "@mantine/core";
 // import { useDisclosure } from "@mantine/hooks";
 
 export default function Demo() {

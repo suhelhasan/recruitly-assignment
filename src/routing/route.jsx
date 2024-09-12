@@ -2,7 +2,7 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import Login from "../pages/Login";
 import CompanyListPage from "../pages/CompanyListPage";
 import CompanyDetailPage from "../pages/CompanyDetailPage";
-import AddEditCompanyPage from "../pages/AddEditCompanyPage";
+// import AddEditCompanyPage from "../pages/AddEditCompanyPage";
 
 export default function route() {
   return (

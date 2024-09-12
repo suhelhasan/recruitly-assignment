@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCompanies, updateCompany } from "../api/CompanyService";
-import { List, ListItem, Table, Flex, Button, Text } from "@mantine/core";
+import { Table, Flex, Button, Text } from "@mantine/core";
 // import { Table } from '@mantine/core';
 import { Link } from "react-router-dom";
 
