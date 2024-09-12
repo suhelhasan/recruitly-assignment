@@ -8,11 +8,11 @@ import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <MantineProvider>
-        <App />
-      </MantineProvider>
-    </BrowserRouter>
-  </StrictMode>
+  // <StrictMode>
+  <BrowserRouter>
+    <MantineProvider>
+      <App />
+    </MantineProvider>
+  </BrowserRouter>
+  // </StrictMode>
 );

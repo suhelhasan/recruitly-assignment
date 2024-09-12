@@ -1,30 +1,11 @@
 import { Button } from "@mantine/core";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-// import { updateCompany } from "../api/CompanyService";
+import { AppShell, Image } from "@mantine/core";
+import logo from "../assets/logo.webp";
+import { Link } from "react-router-dom";
 
-// const Header = () => {
-//   const { logout } = useAuth();
-//   const navigate = useNavigate();
-
-//   const handleLogout = () => {
-//     logout();
-//     navigate("/");
-//   };
-
-//   return (
-//     <header>
-//       <Button onClick={handleLogout}>Logout</Button>
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-import { AppShell } from "@mantine/core";
-// import { useDisclosure } from "@mantine/hooks";
-
-export default function Demo() {
+export default function Header({ hideButton }) {
   const { logout } = useAuth();
   const navigate = useNavigate();
 
@@ -43,26 +24,22 @@ export default function Demo() {
       padding='md'
     >
       <AppShell.Header
-        // display='flex'
-        // justify='space-between'
-        // align='center'
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           padding: "0 10%",
         }}
-        // direction='column'
-        // wrap='wrap'
       >
-        {/* <Burger opened={opened} onClick={toggle} hiddenFrom='sm' size='sm' /> */}
-        <div>Logo</div>
-        <Button onClick={handleLogout}>Logout</Button>
+        <Link to={`/`}>
+          <Image src={logo} radius='md' h={30} w='auto' fit='contain' />
+        </Link>
+        {!hideButton && (
+          <Button onClick={handleLogout} color='#0c2875'>
+            Logout
+          </Button>
+        )}
       </AppShell.Header>
-
-      {/* <AppShell.Navbar p='md'>Navbar</AppShell.Navbar> */}
-
-      {/* <AppShell.Main>Main</AppShell.Main> */}
     </AppShell>
   );
 }

@@ -1,68 +1,19 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
-// import { Button, TextInput, Input } from "@mantine/core";
-// import { redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-// import { Input } from '@mantine/core';
-
-// const Login = () => {
-//   const navigate = useNavigate();
-//   const { isAuthenticated } = useAuth();
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-//   const { login } = useAuth();
-
-//   useEffect(() => {
-//     redirect();
-//   }, [isAuthenticated]);
-
-//   let redirect = () => {
-//     if (isAuthenticated) {
-//       navigate("/companylist");
-//     }
-//   };
-
-//   const handleLogin = () => {
-//     if (username === "admin" && password === "password") {
-//       login();
-//       redirect();
-//     } else {
-//       alert("Invalid credentials");
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <TextInput
-//         label='Username'
-//         value={username}
-//         onChange={(e) => setUsername(e.target.value)}
-//       />
-//       <TextInput
-//         label='Password'
-//         type='password'
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//       <Button onClick={handleLogin}>Login</Button>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
+import Header from "../components/Header";
 import {
   TextInput,
   PasswordInput,
-  Text,
   Paper,
   Group,
   Button,
   Stack,
   Flex,
+  useMatches,
 } from "@mantine/core";
 
-export default function Login(props) {
+export default function Login() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const [username, setUsername] = useState("");
@@ -88,23 +39,25 @@ export default function Login(props) {
     }
   };
 
+  const widthForDevices = useMatches({
+    base: "90%",
+    sm: "90%",
+    lg: "40%",
+  });
+
   return (
     <Flex
       mih={"100vh"}
       w={"100vw"}
-      bg='rgba(0, 0, 0, .1)'
-      // gap='md'
+      bg='#e9f3ff'
       justify='center'
       align='center'
       direction='row'
       wrap='wrap'
     >
-      <Paper radius='md' p='xl' withBorder {...props}>
-        {/* <Text size='lg' fw={500}>
-          Welcome to Mantine
-        </Text> */}
-
-        <form onSubmit={() => console.log("hello")}>
+      <Header hideButton={true} />
+      <Paper radius='md' p='xl' withBorder w={widthForDevices}>
+        <form>
           <Stack>
             <TextInput
               required
@@ -112,7 +65,6 @@ export default function Login(props) {
               placeholder='enter username'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              // error={"Invalid email"}
               radius='md'
             />
 
@@ -122,13 +74,17 @@ export default function Login(props) {
               placeholder='your password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              // error={"Password should include at least 6 characters"}
               radius='md'
             />
           </Stack>
 
           <Group justify='space-between' mt='xl'>
-            <Button type='submit' radius='xl' onClick={handleLogin}>
+            <Button
+              type='submit'
+              radius='xl'
+              onClick={handleLogin}
+              color='#0c2875'
+            >
               Login
             </Button>
           </Group>
