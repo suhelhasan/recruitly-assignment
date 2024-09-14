@@ -25,12 +25,17 @@ export default function CreateCompanyForm({
 
   let createCompany = () => {
     if (name) {
-      addCompany({ name, website, email, phone }).then((response) => {
-        updateData(response.data);
-        setOpened(false);
-        alert("New Company added");
-      });
+      addCompany({ name, website, email, phone })
+        .then((response) => {
+          updateData(response.data);
+          setOpened(false);
+          alert("New Company added");
+        })
+        .catch(() => {
+          alert("Company name is taken. Please choose different name");
+        });
     } else {
+      console.log("hello");
       setError("Please enter the name");
     }
   };
